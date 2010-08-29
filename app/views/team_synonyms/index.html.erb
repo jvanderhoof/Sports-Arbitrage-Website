@@ -1,0 +1,22 @@
+<h1>Listing team_synonyms</h1>
+
+<table>
+  <tr>
+    <th>Synonym</th>
+    <th>Team</th>
+  </tr>
+
+<% for team_synonym in @team_synonyms %>
+  <tr>
+    <td><%=h team_synonym.synonym %></td>
+    <td><%=h team_synonym.team_id %></td>
+    <td><%= link_to 'Show', team_synonym %></td>
+    <td><%= link_to 'Edit', edit_team_synonym_path(team_synonym) %></td>
+    <td><%= link_to 'Destroy', team_synonym, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New team_synonym', new_team_synonym_path %>

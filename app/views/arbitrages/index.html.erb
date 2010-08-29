@@ -1,0 +1,32 @@
+<h1>Arbitrages</h1>
+
+<table class="display">
+  <tr>
+    <th>Team Name</th>
+	<th>Betting Site</th>
+	<th>Profit</th>
+	<th>Type</th>
+	<th>Odds</th>
+	<th> </th>
+  </tr>
+
+<% for arbitrage in @arbitrages %>
+  <tr class="row1">
+    <td><%=h arbitrage.line1.team.name %></td>
+	<td><%= arb_site(arbitrage.line1.betting_site) %></td>
+	<td><%= link_to arbitrage.arb_percent, arbitrage %> %</td>
+	<td><%= arb_type_link(arbitrage) %>
+	<%= arb_row(arbitrage.line1, arbitrage.type.id) %>
+	<td>(O) <%=h arbitrage.arb_open %></td>
+  </tr>
+  <tr class="row2">
+  	<td><%=h arbitrage.line2.team.name %></td>
+	<td><%= arb_site(arbitrage.line2.betting_site) %></td>
+	<td> </td>
+	<td> </td>
+	<%= arb_row(arbitrage.line2, arbitrage.type.id) %>
+	<td>(C) <%= arbitrage.arb_close %></td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+<% end %>
+</table>

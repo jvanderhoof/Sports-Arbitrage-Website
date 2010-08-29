@@ -1,0 +1,18 @@
+<script>
+    $(document).ready(function(){
+	    $(".sports").click(function() {
+		    var checked_status = this.checked;
+		    $("."+this.id).each(function() {
+		    	this.checked = checked_status;
+		    });
+	    });
+    });
+</script>
+
+<h1>Select Your Teams</h1>
+
+<% form_for(@user_team) do |f| %>
+  <%= display_sports_checkboxes(@user_teams, @sports, @user_team) %>
+  <br />
+  <p><input type="submit" value="Save">
+<% end %>

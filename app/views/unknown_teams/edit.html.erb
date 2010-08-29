@@ -1,0 +1,29 @@
+<h1>Editing Unknown Team</h1>
+
+
+<p>
+  <b>Name:</b>
+  <%=h @unknown_team.name %>
+</p>
+
+<p>
+  <b>Sport:</b>
+  <%=h @unknown_team.sport.name %>
+</p>
+
+<% form_for(@unknown_team) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+	Team
+	<%= collection_select(:team, :team_id, Team.find(:all, :conditions => ["sport_id = ?", @unknown_team.sport_id], :order => 'name'), :id, :name, {:prompt => true}) %> &nbsp;&nbsp;<%= f.submit "Update" %>
+  </p>
+  
+  <p>
+    <%= f.submit "Create New Team" %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Show', @unknown_team %> |
+<%= link_to 'Back', unknown_teams_path %>

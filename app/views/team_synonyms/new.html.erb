@@ -1,0 +1,17 @@
+<h1>New team_synonym</h1>
+
+<% form_for(@team_synonym) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :synonym %><br />
+    <%= f.text_field :synonym %>
+  </p>
+  <%= f.hidden_field :sport_id %></br>
+  <%= f.hidden_field :team_id %>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', team_synonyms_path %>

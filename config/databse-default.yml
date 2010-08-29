@@ -1,0 +1,28 @@
+# SQLite version 3.x
+#   gem install sqlite3-ruby (not necessary on OS X Leopard)
+development:
+    encoding: utf8
+    adapter: mysql
+    host: localhost
+    username: root
+    password: 
+    database: betting
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+    encoding: utf8
+    adapter: mysql
+    host: localhost
+    username: root
+    password: 
+    database: betting-test
+
+production:
+    encoding: utf8
+    adapter: mysql
+    host: localhost
+    username: root
+    password: 
+    database: betting

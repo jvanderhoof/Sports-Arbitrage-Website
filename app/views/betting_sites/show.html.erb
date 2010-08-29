@@ -1,0 +1,68 @@
+<p>
+  <b>Name:</b>
+  <%=h @betting_site.name %>
+</p>
+<p>
+  <b>URL:</b>
+  <%=h @betting_site.url %>
+</p>
+<p>
+	<b>Website URL:</b>
+	<%=h @betting_site.website_link %>
+</p>
+<p>
+	<b>Affiliate Code:</b>
+	<%=h @betting_site.affiliate_code %>
+</p>
+<table>
+  <tr>
+    <th>Sport</th>
+    <th>Url</th>
+  </tr>
+
+<% for page in @betting_site.pages %>
+  <tr>
+  	<td><%=h page.sport.name %></td>
+    <td><%=h page.url %></td>
+    <td><%= link_to 'Show', page %></td>
+    <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New pages', {:controller => :pages, :action => 'new', :betting_site_id => @betting_site.id} %>
+
+
+<%= link_to 'Edit', edit_betting_site_path(@betting_site) %> |
+<%= link_to 'Back', betting_sites_path %>
+<br />
+<br />
+<table>
+	<tr>
+		<th>Creation Date</th>
+		<th>Team ID</th>
+		<th>Game ID</th>
+		<th>Spread</th>
+		<th>Spread Vig</th>
+		<th>Money Line</th>
+		<th>Total Points</th>
+		<th>Total Points Vig</th>
+		<th>Over/Under</th>
+	</tr>
+<%# for line in @lines %>
+	<tr>
+		<td><%#= line.created_at %></td>
+		<td><%#= line.team.name %></td>
+		<td><%#= line.game_id %></td>
+		<td><%#= line.spread %></td>
+		<td><%#= line.spread_vig %></td>
+		<td><%#= line.money_line %></td>
+		<td><%#= line.total_points %></td>
+		<td><%#= line.total_points_vig %></td>
+		<td><%#= line.over_under %></td>
+	</tr>
+<%# end %>
+</table>

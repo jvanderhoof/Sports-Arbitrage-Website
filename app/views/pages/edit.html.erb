@@ -1,0 +1,11 @@
+<h1>Editing pages</h1>
+
+<% form_for(@page) do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @page %> |
+<%= link_to 'Back', page_path %>

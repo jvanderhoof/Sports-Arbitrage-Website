@@ -1,0 +1,14 @@
+<% 
+	odds = format_odds(line, "spread")
+%>
+<tr style="<%= cycle("", "background-color:#ccc;") %>">
+	<td>
+		<%= odds %>
+	</td>
+	<td>
+		<%= format_number(line.spread) unless odds.length == 0 %>
+	</td>
+	<td>
+		<%= format_site(line, "spread") %>
+	</td>
+</tr>

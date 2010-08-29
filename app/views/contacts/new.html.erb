@@ -1,0 +1,28 @@
+<h1>Contact Us</h1>
+<div class="outline">
+	<div class="text">
+	<br/>
+	<p>We appreciate any and all feedback.  Please tell us how you feel!</p>
+	<br/>
+<% form_for(@contact) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment, {:rows => '4'} %>
+  </p>
+  <br />
+  <p>
+    <%= f.submit "Send" %>
+  </p>
+<% end %>
+	</div>
+</div>

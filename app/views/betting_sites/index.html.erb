@@ -1,0 +1,24 @@
+<h1>Betting Sites</h1>
+
+<table>
+  <tr>
+	<th>ID</th>
+	<th>Name</th>
+	<th>URL</th>
+  </tr>
+
+<% for betting_site in @betting_sites %>
+  <tr>
+	<td><%=h betting_site.id %></td>
+  	<td><%=h betting_site.name %></td>
+  	<td><%=h betting_site.url %></td>
+    <td><%= link_to 'Show', betting_site %></td>
+    <td><%= link_to 'Edit', edit_betting_site_path(betting_site) %></td>
+    <td><%= link_to 'Destroy', betting_site, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Betting Site', new_betting_site_path %>

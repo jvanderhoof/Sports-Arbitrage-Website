@@ -1,0 +1,12 @@
+<h1>Editing betting_site</h1>
+
+<% form_for(@betting_site) do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @betting_site %> |
+<%= link_to 'Back', betting_sites_path %>

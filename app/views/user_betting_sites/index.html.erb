@@ -1,0 +1,7 @@
+<h1>Select Your Betting Sites</h1>
+
+<% form_for(@user_betting_site) do |f| %>
+  <%= display_checkboxes(@user_betting_sites, @betting_sites, "betting_site_id") %>
+  <br />
+  <p><input type="submit" value="Save">
+<% end %>

@@ -1,0 +1,23 @@
+<p>
+  <b>Url:</b>
+  <%=h @page.url %>
+</p>
+
+<p>
+  <b>Browser:</b>
+  <%=h @page.betting_site_id %>
+</p>
+
+<p>
+  <b>Sport:</b>
+  <%=h @page.sport_id %>
+</p>
+
+<p>
+	<b>Active?:</b>
+	<%= @page.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

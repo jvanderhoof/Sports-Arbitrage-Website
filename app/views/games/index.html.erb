@@ -1,0 +1,16 @@
+<!-- Games Table -->
+<h1>
+	<%= @sport %> Games
+</h1>
+<br/>
+<p>Here are the current top <%= @sport%> Money Line, Spread and Total Point lines.  All line odds are updated in real
+time.  Lines change quickly, so always double check with the actual betting site before you place your bets.</p>
+<br/>
+
+<% if @games.length > 0 %>
+	<% for game in @games %>
+		<%= render :partial => game %>
+	<% end %>
+<% else %>
+	<p> No Games to display at the moment</p>
+<% end %>

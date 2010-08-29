@@ -1,0 +1,12 @@
+<h1>Editing sport</h1>
+
+<% form_for(@sport) do |f| %>
+<%= render :partial => "form", :locals => {:f => f} %>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @sport %> |
+<%= link_to 'Back', sports_path %>

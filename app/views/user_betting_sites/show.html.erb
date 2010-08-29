@@ -1,0 +1,13 @@
+<p>
+  <b>User:</b>
+  <%=h @user_betting_site.user_id %>
+</p>
+
+<p>
+  <b>Betting site:</b>
+  <%=h @user_betting_site.betting_site_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_betting_site_path(@user_betting_site) %> |
+<%= link_to 'Back', user_betting_sites_path %>

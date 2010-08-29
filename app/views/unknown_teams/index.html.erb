@@ -1,0 +1,20 @@
+<h1>Listing unknown_teams</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% for unknown_team in @unknown_teams %>
+  <tr>
+	<td><%= unknown_team.name %></td>
+	<td><%= unknown_team.sport.name %></td>
+    <td><%#= link_to 'Show', unknown_team %></td>
+    <td><%= link_to 'Edit', edit_unknown_team_path(unknown_team) %></td>
+    <td><%= link_to 'Hide', {:action => 'hide', :id => unknown_team} %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New unknown_team', new_unknown_team_path %>

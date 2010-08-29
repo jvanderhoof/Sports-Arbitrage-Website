@@ -1,0 +1,17 @@
+<%= f.error_messages %>
+<p>
+  <%= f.label :url %><br />
+  <%= f.text_field :url %>
+</p>
+<p>
+  <%= f.label :browser_id %><br />
+	<%= collection_select(:page, :betting_site_id, BettingSite.find(:all), :id, :name, {:prompt => true}) %>	
+</p>
+<p>
+  <%= f.label :sport_id %><br />
+	<%= collection_select(:page, :sport_id, Sport.find(:all), :id, :name, {:prompt => true}) %>	
+</p>
+<p>
+  <%= f.label :active %><br />
+  <%= f.check_box :active %>
+</p>

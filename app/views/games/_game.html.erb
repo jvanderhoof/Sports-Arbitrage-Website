@@ -1,0 +1,38 @@
+<% 
+	top_lines1 = (session[:user_id].nil?) ? game.team1.top_lines(game.id) : game.team1.top_lines(game.id, session[:user_id])
+	top_lines2 = (session[:user_id].nil?) ? game.team2.top_lines(game.id) : game.team2.top_lines(game.id, session[:user_id])
+	top_draws = (session[:user_id].nil?) ? game.draw.top_lines(game.id) : game.draw.top_lines(game.id, session[:user_id]) unless game.draw.nil?
+%>
+<% unless top_lines1['money_line'].nil? && top_lines1['spread'].nil? && top_lines1['total_points'].nil? %>
+<div class="outline">
+	<table class="games_title">
+		<tr>
+			<td>
+				<%= game.team1.name.upcase %> vs <%= game.team2.name.upcase %>
+			</td>
+			<td align="right">
+				<%= game.game_time.to_s(:game_title) %>
+			</td>
+		</tr>
+	</table>
+	<table class="games">
+		<%= display_game_odds(top_lines1, game.id, game.team1.name) %>
+		<tr>
+			<td colspan="4" style="border-bottom:1px dotted #ccc;padding:2px;height:1px;">
+				<img src="/images/spacer.gif" width="1" height="1">
+			</td>
+		</tr>
+		<%= display_game_odds(top_lines2, game.id, game.team2.name) %>
+		<% unless top_draws.nil? %>
+		<tr>
+			<td colspan="4" style="border-bottom:1px dotted #ccc;padding:2px;height:1px;">
+				<img src="/images/spacer.gif" width="1" height="1">
+			</td>
+		</tr>
+		<%= display_game_odds(top_draws, game.id, game.draw.name) %>
+		<% end %>
+	</table>
+</div><!-- outline -->
+<br />
+
+<% end %>

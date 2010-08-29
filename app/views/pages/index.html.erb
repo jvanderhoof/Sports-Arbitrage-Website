@@ -1,0 +1,24 @@
+<h1>Listing pages</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Browser</th>
+    <th>Sport</th>
+  </tr>
+
+<% for page in @pages %>
+  <tr>
+    <td><%=h page.url %></td>
+    <td><%=h page.betting_site_id %></td>
+    <td><%=h page.sport_id %></td>
+    <td><%= link_to 'Show', page %></td>
+    <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New page', new_page_path %>

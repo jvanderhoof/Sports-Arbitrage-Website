@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+* {margin:0;padding:0;}
+body { Font: 75%/1 Arial, Helvetica, sans-serif;color: #fff;height: 100%;width: 100%;text-align:center;background: #333 url(img/bg.gif) repeat;}
+#left {width:110px;margin:76px 0 0 50px;float:left;}
+#left h5 {background: transparent url(img/menu.gif) no-repeat top left;height:25px;font: bold 11px Arial, Helvetica, sans-serif; color:#cc3; text-transform:uppercase;text-align:right;margin-top:5px;padding:5px 20px 0 0;}
+
+#left ul {list-style:none;text-align:right;}
+
+ul.sports {background-color:#ccc;}
+
+ul.sports li {font: bold 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;background-image: url(img/arrow.gif); background-repeat:no-repeat; background-position: 100px 10px; color:#000;padding:5px 10px;}
+
+ul.sports li li, ul.sports li li a { text-decoration:underline;color:#333;background-image:none;padding:2px 0;margin:0;}
+ul.sports li li a:hover { text-decoration:none;color:#666;}
+#container {width:777px;border:1px solid red;margin-left: 115px;float:left; }
+#header {background: transparent url(img/hd_img.jpg) no-repeat top right;text-align:left;}
+
+
+#center {}
+#right {}
+#footer {margin-top:50px;background: transparent url(img/bar.gif) repeat-x; height:34px; padding:5px 0px 0px;font-size:9px;}
+#footer ul {border:1px solid white;overflow:auto;}
+#footer li {float:left;list-style-image:url(img/dots.gif);width:120px;height:10px;border:1px solid red;}
+#footer li a {font: bold 11px Arial, Helvetica, sans-serif; color:#cc3;text-transform:uppercase;text-decoration:none;}
+a {color:#399;text-decoration:none;outline:none;text-decoration:underline;}
+a:hover {color: #399;text-decoration:none;}

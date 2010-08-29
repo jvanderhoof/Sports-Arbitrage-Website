@@ -1,0 +1,26 @@
+<h1>Listing sports</h1>
+
+
+<%= authorized? %>
+<table>
+  <tr>
+	<th>ID</th>
+	<th>Sport</th>
+	<th>Active</th>
+  </tr>
+
+<% for sport in @sports %>
+  <tr>
+	<td><%= sport.id %></td>
+  	<td><%=h sport.name %></td>
+	<td><%= sport.active %></td>
+    <td><%= link_to 'Show', sport %></td>
+    <td><%= link_to 'Edit', edit_sport_path(sport) %></td>
+    <td><%= link_to 'Destroy', sport, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New sport', new_sport_path %>

@@ -1,0 +1,20 @@
+- add dynamic sports menu - done
+- add routing by sport
+- add admin type to users 
+- add past_lines to hold all lines, lines to hold only current - done
+
+- user signup
+	- edit details
+	- retrieve password
+	- customize - done
+		- betting sites
+		- teams / sports
+
+- add active/inactive for sports per betting site - done
+- add active/inactive for betting sites - done
+
+- add spacing to the game title on the left
+- set widths on best odds table so things don't float around
+- larger logo displayed for betting sites
+
+	

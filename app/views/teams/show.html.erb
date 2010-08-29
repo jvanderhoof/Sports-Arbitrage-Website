@@ -1,0 +1,31 @@
+<p>
+  <b>Name:</b>
+  <%=h @team.name %>
+</p>
+
+<p>
+  <b>Sport:</b>
+  <%=h @team.sport_id %>
+</p>
+
+<p>
+<table>
+  <tr>
+    <th>Synonym</th>
+  </tr>
+
+<% for team_synonym in @team.team_synonyms %>
+  <tr>
+    <td><%=h team_synonym.synonym %></td>
+    <td><%= link_to 'Show', team_synonym %></td>
+    <td><%= link_to 'Edit', edit_team_synonym_path(team_synonym) %></td>
+    <td><%= link_to 'Destroy', team_synonym, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+</p>
+<p><%= link_to 'New team_synonym', {:controller => :team_synonyms, :action=>'new', :id => @team.id } %></p>
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>

@@ -1,0 +1,38 @@
+<h3>
+	<%= @sport %> Scores
+</h3>
+<table>
+	<caption>
+		<%= Time.zone.now.yesterday.strftime("%A, %B %d")%>
+		<%#= @scores_date.strftime("%A, %B %d") %>
+	</caption>
+<% unless @scores.nil? %>
+<% for score in @scores %>
+	<% unless score.team1_score.nil? || score.team2_score.nil? %>
+	<tr>
+		<td colspan="3" style="border-bottom:1px dotted #ccc;padding:2px;height:1px;">
+			<img src="/images/spacer.gif" width="1" height="1" />
+		</td>
+	</tr>
+	<tr>
+		<th>
+			<%= score.team1.name %>
+		</th>
+		<td>
+			<%= score.team1_score %>
+		</td>
+	</tr>
+	<tr>
+		<th>
+			<%= score.team2.name %>
+		</th>
+		<td>
+			<%= score.team2_score %>
+		</td>
+	</tr>
+	<% end %>
+<% end %>
+<% end %>
+</table>
+<br />
+<p>All scores provided by Yahoo! Sports</p>

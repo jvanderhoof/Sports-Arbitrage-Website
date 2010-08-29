@@ -1,0 +1,26 @@
+<table>
+  <tr>
+	<td><b>Arb Type:</b></td>
+	<td><%=h @arbitrage.type.name %></td>
+  </tr>
+  <tr>
+	<td><b>Time:</b></td>
+	<td><%=h @arbitrage.created_at.to_s(:game_line) %></td>
+  </tr>
+  <tr>
+	<td><b>Margin:</b></td>
+	<td><%=h @arbitrage.arb_percent %>%</td>
+  </tr>
+  <tr>
+	<td><b>Profit:</b></td>
+	<td>$<%=h @arbitrage.profit_margin(20) %></td>
+  </tr>
+</table>
+
+
+<p>
+<%= display_arb(@arbitrage, 20) %>
+</p>
+
+
+<%= link_to 'Back', arbitrages_path %>

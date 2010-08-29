@@ -1,0 +1,22 @@
+<h1>New unknown_team</h1>
+
+<% form_for(@unknown_team) do |f| %>
+  <%= f.error_messages %><br>
+Error: <%=  @unknown_team.errors %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :sport_id %><br />
+	<%= f.text_field :sport_id %>
+	<%#= collection_select(:unknown_team, :sport_id, Sport.find(:all), :id, :name, {:prompt => true}) %>	
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', unknown_teams_path %>

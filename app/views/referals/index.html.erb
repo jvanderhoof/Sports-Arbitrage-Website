@@ -1,0 +1,24 @@
+<h1>Listing referals</h1>
+
+<table>
+  <tr>
+    <th>Betting site</th>
+    <th>Game</th>
+	<th>Time Stamp</th>
+  </tr>
+
+<% for referal in @referals %>
+  <tr>
+    <td><%=h referal.betting_site.name %></td>
+    <td><%=h referal.game.team1.name %> vs <%=h referal.game.team2.name %></td>
+	<td><%=h referal.created_at.strftime("%m/%d/%Y %I:%M%p") %></td>
+    <td><%#= link_to 'Show', referal %></td>
+    <td><%#= link_to 'Edit', edit_referal_path(referal) %></td>
+    <td><%#= link_to 'Destroy', referal, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%#= link_to 'New referal', new_referal_path %>

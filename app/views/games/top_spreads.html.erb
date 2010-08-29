@@ -1,0 +1,70 @@
+<!-- Games Table -->
+<h1>
+	<%= @game.team1.name.upcase %> vs <%= @game.team2.name.upcase %> :: Spread
+</h1>
+<div class="outline">
+	<table class="bets">
+		<caption>
+			<%= @game.game_time.to_s(:game_title) %>
+		</caption>
+		<thead>
+			<tr>
+				<th>
+					Teams
+				</th>
+				<th>
+					Odds
+				</th>
+				<th>
+					Spread
+				</th>
+				<th>
+					Betting Sites (Update)
+				</th>
+			</tr>
+		</thead>
+		<tr>
+			<th rowspan="<%= @lines1.length+1 %>" valign="top" class="teams">
+				<%= @game.team1.name %>
+			</th>
+		</tr>
+	<% for line in @lines1 %>
+		<% odds = format_odds(line, "spread") %>
+		<tr style="<%= cycle("", "background-color:#ccc;") %>">
+			<td>
+				<%= odds %>
+			</td>
+			<td>
+				<%= format_number(line.spread) unless odds.length == 0 || odds.to_s == 'N/A' %>
+			</td>
+			<td>
+				<%= format_site(line, "spread") %>
+			</td>
+		</tr>
+	<% end %>
+		<tr>
+			<td colspan="4" style="border-bottom:1px dotted #ccc;padding:2px;height:1px;">
+				<img src="/images/spacer.gif" width="1" height="1" />
+			</td>
+		</tr>
+		<tr>
+			<th rowspan="<%= @lines2.length+1 %>" valign="top" class="teams">
+				<%= @game.team2.name %>
+			</th>
+		</tr>
+	<% for line in @lines2 %>
+		<tr style="<%= cycle("background-color:#ccc;", "") %>">
+		<% odds = format_odds(line, "spread") %>
+			<td>
+				<%= odds %>
+			</td>
+			<td>
+			<%= format_number(line.spread) unless odds.length == 0 || odds.to_s == 'N/A' %>
+			</td>
+			<td>
+				<%= format_site(line, "spread") %>
+			</td>
+		</tr>
+	<% end %>
+	</table>
+</div><!-- outline -->
